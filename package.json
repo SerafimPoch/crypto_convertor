@@ -1,6 +1,7 @@
 {
   "name": "rapid",
   "version": "0.1.0",
+  "homepage": "https://github.com/SerafimPoch/rapid/",
   "private": true,
   "dependencies": {
     "gh-pages": "^1.1.0",
@@ -15,6 +16,8 @@
     "styled-components": "^3.2.6"
   },
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
