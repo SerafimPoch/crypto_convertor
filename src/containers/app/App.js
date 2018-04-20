@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Chart from "../chart/Chart";
+import Calc from "../calculator/Calc";
 import { Container } from "./index";
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
     return (
       <Container>
         <Chart />
+        <Calc />
       </Container>
     );
   }

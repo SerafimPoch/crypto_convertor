@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerChat = styled.div`
   display: flex;
   flex-flow: column wrap;
-  height: 300px;
+  height: 150px;
   align-items: center;
   margin-top: 50px;
   select {

@@ -14,7 +14,7 @@ class Chart extends Component {
 
   dark(e) {
     if (this.state.value === "rub") {
-      return e * 60;
+      return String(e * 60).slice(0, 8);
     } else if (this.state.value === "eur") {
       return String(e * 0.8).slice(0, 8);
     } else {
