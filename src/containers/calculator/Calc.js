@@ -84,7 +84,7 @@ class Calc extends Component {
               <option value="EUR">EUR</option>
             </select>
             <p>
-              {convert} {val}
+              {String(convert).slice(0, 6)} {val}
             </p>
           </CryptoValue>
         </ConvertCont>
