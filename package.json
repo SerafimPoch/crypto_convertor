@@ -1,7 +1,7 @@
 {
   "name": "rapid",
   "version": "0.1.0",
-  "homepage": "https://github.com/SerafimPoch/rapid/",
+  "homepage": "https://serafimpoch.github.io/rapid",
   "private": true,
   "dependencies": {
     "gh-pages": "^1.1.0",
