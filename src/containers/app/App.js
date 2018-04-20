@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Chart from "../chart/Chart";
 import Calc from "../calculator/Calc";
 import { Container } from "./index";
+import Trade from "../trade/Trade";
 
 class App extends Component {
   state = {
@@ -18,6 +19,7 @@ class App extends Component {
       <Container>
         <Chart />
         <Calc />
+        <Trade />
       </Container>
     );
   }

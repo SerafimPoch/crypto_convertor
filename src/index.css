@@ -4,5 +4,6 @@ body {
   font-family: sans-serif;
 }
 
-trdt {
+.tradingview-widget-container {
+  width: 100px;
 }
