@@ -8,7 +8,8 @@ import {
   ConvertCont,
   CryptoChoose,
   ButtonConvert,
-  CryptoValue
+  CryptoValue,
+  Button
 } from "./index";
 
 class Calc extends Component {
@@ -76,7 +77,7 @@ class Calc extends Component {
             </p>
           </CryptoChoose>
           <ButtonConvert>
-            <button onClick={e => this.con(e)}>Go</button>
+            <Button onClick={e => this.con(e)}>go</Button>
           </ButtonConvert>
           <CryptoValue>
             <select onChange={e => this.handleVal(e)}>
