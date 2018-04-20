@@ -62,6 +62,7 @@ class Calc extends Component {
               value={value}
               type="number"
               onChange={e => this.handleNumber(e)}
+              name="inp"
             />
             <select onChange={e => this.handleSelect(e)}>
               <option value="bitcoin">Bitcoin</option>
