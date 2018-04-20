@@ -29,6 +29,9 @@ export const CryptoChoose = styled.div`
   justify-content: space-around;
   height: 150px;
   width: 180px;
+  p {
+    text-align: center;
+  }
 `;
 
 export const ButtonConvert = styled.div`
@@ -39,4 +42,6 @@ export const ButtonConvert = styled.div`
   height: 150px;
 `;
 
-export const CryptoValue = CryptoChoose.extend``;
+export const CryptoValue = CryptoChoose.extend`
+  margin-top: 11px;
+`;
