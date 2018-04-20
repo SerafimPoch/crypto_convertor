@@ -32,15 +32,6 @@ export const CryptoChoose = styled.div`
   p {
     text-align: center;
   }
-  input[name="inp"] {
-    width: 200px;
-    height: 30px;
-    color: #6e768f;
-    border: 1px solid #d7d9e0;
-    border-radius: 3px;
-    padding: 0.5em 2.5em 0.5em 1em;
-    -webkit-appearance: none;
-  }
 `;
 
 export const ButtonConvert = styled.div`
