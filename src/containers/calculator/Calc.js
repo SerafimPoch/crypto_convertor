@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { conncet } from "react-redux";
+import { connect } from "react-redux";
+import { dataConvert } from "./selectors";
+
 import {
   CalcContainer,
   Title,
@@ -12,7 +14,7 @@ import {
 class Calc extends Component {
   state = {
     value: 0,
-    sel: "Bitcoin",
+    sel: "bitcoin",
     val: "RUB",
     convert: 0
   };
@@ -35,6 +37,18 @@ class Calc extends Component {
     });
   }
 
+  con() {
+    const { store } = this.props;
+    const { sel, val, value, convert } = this.state;
+    const priceUsd = Number(
+      store.filter(e => e.id === sel).map(e => e.price_usd)
+    );
+    const data = dataConvert(priceUsd, sel, val, value);
+    this.setState({
+      convert: data
+    });
+  }
+
   render() {
     const { value, sel, val, convert } = this.state;
     return (
@@ -50,18 +64,18 @@ class Calc extends Component {
               onChange={e => this.handleNumber(e)}
             />
             <select onChange={e => this.handleSelect(e)}>
-              <option value="Bitcoin">Bitcoin</option>
-              <option value="Ethereum">Ethereum</option>
-              <option value="Ripple">Ripple</option>
-              <option value="Bitcoin Cash">Bitcoin Cash</option>
-              <option value="Litecoin">Litecoin</option>
+              <option value="bitcoin">Bitcoin</option>
+              <option value="ethereum">Ethereum</option>
+              <option value="ripple">Ripple</option>
+              <option value="bitcoin-cash">Bitcoin Cash</option>
+              <option value="litecoin">Litecoin</option>
             </select>
             <p>
               {value} {sel}
             </p>
           </CryptoChoose>
           <ButtonConvert>
-            <button>Go</button>
+            <button onClick={e => this.con(e)}>Go</button>
           </ButtonConvert>
           <CryptoValue>
             <select onChange={e => this.handleVal(e)}>
@@ -79,4 +93,20 @@ class Calc extends Component {
   }
 }
 
-export default Calc;
+const mapStateToProps = state => ({
+  store: state.cryptoList
+});
+
+export default connect(mapStateToProps, null)(Calc);
+
+// switch (true) {
+//     case sel === "bitcoin" && val === "RUB":
+//       return value * (e * 60);
+//     case sel === "bitcoin" && val === "USD":
+//       return value * e;
+//     case sel === "bitcoin" && val === "EUR":
+//       return value * (e * 0.8);
+//     case sel === "bitcoin" && val === "EUR":
+//       return value * (e * 0.8);
+
+//   }
